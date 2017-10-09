@@ -11,6 +11,7 @@ import { CotizacionesComponent } from './vistas/cotizaciones/cotizaciones.compon
 import { EmpleadosComponent } from './vistas/empleados/empleados.component';
 import { MenuComponent } from './vistas/menu/menu.component';
 import { HomeComponent } from './vistas/home/home.component';
+import { MenuNavComponent } from './Componentes/menu-nav/menu-nav.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './vistas/home/home.component';
     CotizacionesComponent,
     EmpleadosComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    MenuNavComponent
   ],
   imports: [
     BrowserModule,
