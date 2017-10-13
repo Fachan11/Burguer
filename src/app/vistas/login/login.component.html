@@ -1,34 +1,104 @@
-<div class="body">
-  <div class="container">
-    
-    <div class="card">
-      <div class="card-body">
-          <form action="">
-                <div class="form-group">
-                  
-                  <div class="col-sm-12">
-                    <img class="img-fluid" src="assets/Images/Generales/LaBurguesia.jpg" alt="">
-                  </div>
+<div class="container">
+  <div class="card card-container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-3 imagencentrada" >
+        <img src="assets/Images/Generales/LaBurguesia.jpg" alt="" class="img-fluid">
+      </div>
 
-                  <div class="col-sm-12">
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-        
-                <div class="form-group">
-                  <div class="col-sm-12">
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" class="form-control">
-                  </div>
-                </div>
-        
-                <button type="submit" class="btn  btn-success" routerLink="/home"routerLinkActive="active">Entrar</button>
-            </form>
+      <div class="col-sm-12 col-md-8 col-lg-7">
+        <form action="" id="agregar" >
+          <div ngModelGroup="contacto" #contacto="ngModelGroup">
+          <div class="form-row">
+            <label for="nombre" class="form-control-label col-sm-12 col-md-2 col-lg-2">Nombre:</label>
+            <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="nombre" name="nombre" ngModel #nombre>
+          </div>
+          <div class="form-row">
+            <label for="edad" class="form-control-label col-sm-12 col-md-2 col-lg-2">Edad:</label>
+            <input type="number" class="form-control col-sm-12 col-md-10 col-lg-10" id="edad"  name="edad" [ngModel]="usuarios.edad">
+          </div>
+          <div class="form-row">
+            <label for="domicilio" class="form-control-label col-sm-12 col-md-2 col-lg-2">Domicilio:</label>
+            <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="domicilio"  name="domicilio" [ngModel]="usuarios.domicilio">
+          </div>
+          <div class="form-row">
+            <label for="correo" class="form-control-label col-sm-12 col-md-2 col-lg-2">Correo:</label>
+            <input type="email" class="form-control col-sm-12 col-md-10 col-lg-10" id="correo"  name="correo" [ngModel]="usuarios.correo">
+          </div>
+          <div class="form-row">
+              <label for="nacimiento" class="form-control-label col-sm-12 col-md-2 col-lg-2">Fecha Nacimiento:</label>
+              <input type="datetime" class="form-control col-sm-12 col-md-10 col-lg-10" id="nacimiento"  name="nacimiento" [ngModel]="usuarios.nacimiento">
+            </div>
+            <div class="form-row">
+                <label for="puesto" class="form-control-label col-sm-12 col-md-2 col-lg-2">Puesto:</label>
+                <select type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="puesto"  name="puesto" [ngModel]="usuarios.puesto">
+                    <option value="1" disabled>Seleccione Puesto</option>
+                    <option value="Almacen">Almacen</option>
+                  <option value="Mesero">Mesero</option>
+                  <option value="Gerente">Gerente</option>
+                  <option value="Limpieza">Limpieza</option>
+                  
+                  
+                  
+                </select>
+              </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label class="form-control-label" for="usuario">Usuario:</label>
+              <input type="text" class="form-control" id="usuario"  name="usuario"[(ngModel)]="usuarios.usuario">
+            </div>
+
+            <div class="form-group col">
+              <label for="contraseña" class="form-control-label">Contraseña:</label>
+              <input type="text" class="form-control" id="contraseña">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col"><button  class="btn btn-success" (click)="agregar(contacto.value)">Guardar</button></div>
+            <div class="form-group col"><button type="reset" class="btn btn-primary">Resetear</button></div>
+            <div class="form-group col"></div>
+            {{contacto.value | json}}
+          </div>
+        </div>
+          
+        </form>
+      </div>
+      <div class="col-sm-12 col-md-2 col-lg-2">
+        <!-- <button type="reset"  class="btn btn-primary">Resetear</button>   -->
       </div>
     </div>
 
-    
+    <div class="row">
+      <div class="col-sm-12">
+          <table class="table table-hover table-responsive">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Edad</th>
+                  <th>Domicilio</th>
+                  <th>Correo</th>
+                  <th>Puesto</th>
+                  <th>Usuario</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr *ngFor="let item of usuarios1">
+                  <th scope="row">{{item.id}}</th>
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.edad}}</td>
+                  <td>{{item.domicilio}}</td>
+                  <td>{{item.correo}}</td>
+                  <td>{{item.puesto}}</td>
+                  <td>{{item.usuario}}</td>
+                </tr>
+                
+              </tbody>
+            </table>
+      </div>
+    </div>
+
 
   </div>
+  <!-- /card-container -->
 </div>
+<!-- /container -->

@@ -12,6 +12,8 @@ import { EmpleadosComponent } from './vistas/empleados/empleados.component';
 import { MenuComponent } from './vistas/menu/menu.component';
 import { HomeComponent } from './vistas/home/home.component';
 import { MenuNavComponent } from './Componentes/menu-nav/menu-nav.component';
+import { ProveedoresComponent } from './vistas/proveedores/proveedores.component';
+import { InventarioComponent } from './vistas/inventario/inventario.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MenuNavComponent } from './Componentes/menu-nav/menu-nav.component';
     EmpleadosComponent,
     MenuComponent,
     HomeComponent,
-    MenuNavComponent
+    MenuNavComponent,
+    ProveedoresComponent,
+    InventarioComponent
   ],
   imports: [
     BrowserModule,
