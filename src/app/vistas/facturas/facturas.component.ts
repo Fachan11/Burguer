@@ -1,30 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-proveedores',
-  templateUrl: './proveedores.component.html',
-  styleUrls: ['./proveedores.component.css']
+  selector: 'app-facturas',
+  templateUrl: './facturas.component.html',
+  styleUrls: ['./facturas.component.css']
 })
-export class ProveedoresComponent implements OnInit {
+export class FacturasComponent implements OnInit {
 
   constructor() { }
-
   usuarios1=[{
     id:1,
+    codigo:"SDF463F",
     empresa:"Fabian",
     domicilio:"Carmen Romano",
     correo:"@hotmail.com",
     telefono:"81172739",
     producto:"Pan",
-    cantidad:"100 barras"
+    cantidad:"100 barras",
+    marca:"Bimbo"
   },{
     id:1,
+    codigo:"S09999",
     empresa:"Carnes San Juan",
     domicilio:"Apodaca",
     correo:"carnesSanJuan@hotmail.com",
     telefono:"7773989",
     producto:"Carnes Frias",
-    cantidad:"100 Kg"
+    cantidad:"100 Kg",
+    marca:"Baffar"
   }];
 
    
@@ -34,7 +37,6 @@ export class ProveedoresComponent implements OnInit {
     // console.log(this.usuarios)
     this.usuarios1.push(usuario2);
   }
-  
   ngOnInit() {
   }
 

@@ -1,7 +1,7 @@
 import {usuario} from './model/usuario';
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

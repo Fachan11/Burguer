@@ -1,0 +1,14 @@
+@import "/../less/core";
+
+
+.form-row{
+    padding: 15px;
+}
+
+.imagencentrada{
+    text-align: center;
+}
+
+.card{
+    margin-top: 50px;
+}

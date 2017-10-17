@@ -8,6 +8,9 @@ import { CotizacionesComponent } from "./vistas/cotizaciones/cotizaciones.compon
 import { MenuComponent } from "./vistas/menu/menu.component";
 import { EmpleadosComponent } from "./vistas/empleados/empleados.component";
 import { HomeComponent } from "./vistas/home/home.component";
+import { ProveedoresComponent } from "./vistas/proveedores/proveedores.component";
+import { InventarioComponent } from "./vistas/inventario/inventario.component";
+import { FacturasComponent } from "./vistas/facturas/facturas.component";
 
 
 const appRoutes:Routes=[
@@ -18,6 +21,9 @@ const appRoutes:Routes=[
     {path:'empleados',component:EmpleadosComponent},  
     {path:'menu',component:MenuComponent},   
     {path:'cotizaciones',component:CotizacionesComponent},   
+    {path:'proveedores', component:ProveedoresComponent},
+    {path:'inventario', component:InventarioComponent},
+    {path:'facturas',component:FacturasComponent}
 ]
 
 export const appRoutingProviders: any[] = [

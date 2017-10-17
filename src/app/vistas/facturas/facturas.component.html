@@ -11,29 +11,18 @@
   
         <div class="col-sm-12 col-md-8 col-lg-7">
 
-            <h3>Inventario</h3>
+            <h3>Facturas</h3>
             <hr>
 
           <form action="" id="agregar" >
             <div ngModelGroup="contacto" #contacto="ngModelGroup">
             <div class="form-row">
-              <label for="codigo" class="form-control-label col-sm-12 col-md-2 col-lg-2">Codigo:</label>
+                <button class="btn btn-primary">Buscar Archivo </button>
+              
               <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="codigo" name="codigo" ngModel #codigo>
             </div>
             
-            <div class="form-row">
-              <label for="producto" class="form-control-label col-sm-12 col-md-2 col-lg-2">Producto:</label>
-              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="producto"  name="producto" >
-            </div>
-            <div class="form-row">
-              <label for="cantidad" class="form-control-label col-sm-12 col-md-2 col-lg-2">Cantidad:</label>
-              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="cantidad"  name="cantidad">
-            </div>
-            <div class="form-row">
-                <label for="marca" class="form-control-label col-sm-12 col-md-2 col-lg-2">Marca:</label>
-                <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="marca"  name="marca">
-              </div>
-             
+            
             <!-- <div class="form-row">
               <div class="form-group col">
                 <label class="form-control-label" for="producto">Producto:</label>
@@ -46,9 +35,9 @@
               </div> -->
             <!-- </div> -->
             <div class="form-row">
-              <div class="form-group col"><button  class="btn btn-success" (click)="agregar(contacto.value)">Guardar</button></div>
-              <div class="form-group col"><button type="reset" class="btn btn-primary">Resetear</button></div>
-              <div class="form-group col"><button class="btn btn-primary">Excel </button></div>
+              <div class="form-group col"><button  class="btn btn-success" (click)="agregar(contacto.value)">Imprimir</button></div>
+              <div class="form-group col"><button type="reset" class="btn btn-primary">Descargar</button></div>
+              
               <!-- {{contacto.value | json}} -->
             </div>
           </div>
@@ -67,23 +56,50 @@
                   <tr>
                     <!-- <th>#</th> -->
                     <th>Codigo</th>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Marca</th>
+                    <th>Nombre Archivo de Factura</th>
+                    <!-- <th>Cantidad</th>
+                    <th>Marca</th> -->
                     <!-- <th>Producto</th>
                     <th>Cantidad</th> -->
                   </tr>
                 </thead>
                 <tbody >
-                  <tr *ngFor="let item of usuarios1">
+                  <tr>
                     <!-- <th scope="row">{{item.id}}</th> -->
-                    <td>{{item.codigo}}</td>
-                    <td>{{item.producto}}</td>
-                    <td>{{item.cantidad}}</td>
-                    <td>{{item.marca}}</td>
+                    <td>0045</td>
+                    <td>Factura_Cotizacion01_16_Agosto_2017.pdf</td>
+                    <!-- <td>{{item.cantidad}}</td>
+                    <td>{{item.marca}}</td> -->
                     <!-- <td>{{item.producto}}</td>
                     <td>{{item.cantidad}}</td> -->
                   </tr>
+                  <tr>
+                      <!-- <th scope="row">{{item.id}}</th> -->
+                      <td>004545</td>
+                      <td>Factura_Cotizacion05_16_Agosto_2017.pdf</td>
+                      <!-- <td>{{item.cantidad}}</td>
+                      <td>{{item.marca}}</td> -->
+                      <!-- <td>{{item.producto}}</td>
+                      <td>{{item.cantidad}}</td> -->
+                    </tr>
+                    <tr>
+                        <!-- <th scope="row">{{item.id}}</th> -->
+                        <td>43534</td>
+                        <td>Factura_Cotizacion06_16_Agosto_2017.pdf</td>
+                        <!-- <td>{{item.cantidad}}</td>
+                        <td>{{item.marca}}</td> -->
+                        <!-- <td>{{item.producto}}</td>
+                        <td>{{item.cantidad}}</td> -->
+                      </tr>
+                      <tr>
+                          <!-- <th scope="row">{{item.id}}</th> -->
+                          <td>46343</td>
+                          <td>Factura_Cotizacion08_16_Agosto_2017.pdf</td>
+                          <!-- <td>{{item.cantidad}}</td>
+                          <td>{{item.marca}}</td> -->
+                          <!-- <td>{{item.producto}}</td>
+                          <td>{{item.cantidad}}</td> -->
+                        </tr>
                   
                 </tbody>
               </table>
