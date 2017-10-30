@@ -1,14 +1,35 @@
 import {usuario} from './model/usuario';
 import { Component, OnInit } from '@angular/core';
-import { Form } from '@angular/forms';
+import { Form, FormGroup , FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-empleados',
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.less']
 })
 export class EmpleadosComponent implements OnInit {
+  form:FormGroup;
 
-  constructor() { }
+  constructor(
+    private fb:FormBuilder) { 
+      this.form= fb.group({
+        nombre:['',Validators.compose([
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(25),
+          Validators.pattern("[0-9]{5}")
+        ])],
+        edad:['',Validators.compose([
+          Validators.pattern("[0-9]{5}")
+        ])],
+        domicilio:'',
+        correo:'',
+
+        nacimiento:'',
+        puesto:'',
+        usuario:'',
+        contrasena:''
+      })
+    }
 
   
   usuarios= new usuario();

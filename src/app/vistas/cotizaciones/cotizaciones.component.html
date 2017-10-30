@@ -1,4 +1,6 @@
-<div class="container">
+    <app-menu-nav></app-menu-nav> 
+    <div class="container">
+
     <div class="card card-container">
       <div class="row">
         
@@ -14,31 +16,31 @@
           </div>  
           
 
-          <form action="" id="agregar" >
-            <div ngModelGroup="contacto" #contacto="ngModelGroup">
+          <form>
+            <div >
             <div class="form-row">
               <label for="nombre" class="form-control-label col-sm-12 col-md-2 col-lg-2">Nombre de Empresa:</label>
-              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-4" id="nombre" name="nombre" ngModel #nombre>
+              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-4" id="nombre" name="nombre"  #nombre>
             <!-- </div> -->
             <!-- <div class="form-row"> -->
               <label for="edad" class="form-control-label col-sm-12 col-md-2 col-lg-2">Dirección:</label>
-              <input type="number" class="form-control col-sm-12 col-md-10 col-lg-4" id="edad"  name="edad" [ngModel]="usuarios.edad">
+              <input type="number" class="form-control col-sm-12 col-md-10 col-lg-4" id="edad"  name="edad" >
             </div>
             <div class="form-row">
               <label for="domicilio" class="form-control-label col-sm-12 col-md-2 col-lg-2">Domicilio:</label>
-              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="domicilio"  name="domicilio" [ngModel]="usuarios.domicilio">
+              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="domicilio"  name="domicilio" >
             </div>
             <div class="form-row">
               <label for="correo" class="form-control-label col-sm-12 col-md-2 col-lg-2">Correo:</label>
-              <input type="email" class="form-control col-sm-12 col-md-10 col-lg-10" id="correo"  name="correo" [ngModel]="usuarios.correo">
+              <input type="email" class="form-control col-sm-12 col-md-10 col-lg-10" id="correo"  name="correo" >
             </div>
             <div class="form-row">
                 <label for="nacimiento" class="form-control-label col-sm-12 col-md-2 col-lg-2">Fecha Nacimiento:</label>
-                <input type="datetime" class="form-control col-sm-12 col-md-10 col-lg-10" id="nacimiento"  name="nacimiento" [ngModel]="usuarios.nacimiento">
+                <input type="datetime" class="form-control col-sm-12 col-md-10 col-lg-10" id="nacimiento"  name="nacimiento" >
               </div>
               <div class="form-row">
                   <label for="puesto" class="form-control-label col-sm-12 col-md-2 col-lg-2">Puesto:</label>
-                  <select type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="puesto"  name="puesto" [ngModel]="usuarios.puesto">
+                  <select type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="puesto"  name="puesto" >
                       <option value="1" disabled>Seleccione Puesto</option>
                       <option value="Almacen">Almacen</option>
                     <option value="Mesero">Mesero</option>
@@ -52,12 +54,12 @@
             <div class="form-row">
               <div class="form-group col">
                 <label class="form-control-label" for="usuario">Usuario:</label>
-                <input type="text" class="form-control" id="usuario"  name="usuario"[(ngModel)]="usuarios.usuario">
+                <input type="text" class="form-control" id="usuario"  name="usuario">
               </div>
   
               <div class="form-group col">
                 <label for="contraseña" class="form-control-label">Contraseña:</label>
-                <input type="text" class="form-control" id="contraseña" name=contraseña ngModel #contrasena>
+                <input type="text" class="form-control" id="contraseña" name=contraseña  #contrasena>
               </div>
             </div>
             <div class="form-row">
@@ -65,6 +67,7 @@
               <div class="form-group col"><button type="reset" class="btn btn-primary">Resetear</button></div>
               <div class="form-group col"></div>
               {{contacto.value | json}}
+              {{nombre}}
             </div>
           </div>
             
