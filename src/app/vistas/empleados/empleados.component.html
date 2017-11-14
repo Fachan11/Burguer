@@ -9,49 +9,129 @@
         <img src="assets/Images/Generales/LaBurguesia.jpg" alt="" class="img-fluid">
       </div>
 
-      <div class="col-sm-12 col-md-10 col-lg-7">
+      <div class="col-sm-12 col-md-10 col-lg-9">
 
         <h3>Empleados</h3>
         <hr>
 
         <form novalidate [formGroup]="form">
 
+
+
+
           <div class="form-row">
-            <label for="nombre" class="form-control-label col-sm-12 col-md-2 col-lg-2">Nombre:</label>
-            <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="nombre" formControlName="nombre">
-            
-            <div class="col-sm-12" *ngIf="form.controls.nombre.errors && form.controls.nombre.touched">
-              <div *ngIf="form.controls.nombre.errors.required" class="alert alert-danger">
-                Campo Requerido
-              </div>
-              <div class="col-sm-12"  *ngIf="form.controls.nombre.errors.minlength" class="alert alert-danger">
-                Minimo 4 Caracteres
-              </div>
-              <div class="col-sm-12"  *ngIf="form.controls.nombre.errors.maxlength" class="alert alert-danger">
+            <div class="form-group col">
+              <label for="nombre" class="form-control-label ">Nombre:</label>
+              <input type="text" class="form-control " id="nombre" formControlName="nombre">
+              <!--
+              Validaciones
+            -->
+              <div class="col-sm-12" *ngIf="(form.controls.nombre.errors && form.controls.nombre.touched) || (form.controls.nombre.errors && form.controls.nombre.dirty)">
+                <div *ngIf="form.controls.nombre.errors.required" class="colorValidacionDanger">
+                  Campo Requerido
+                </div>
+                <div class="col-sm-12" *ngIf="form.controls.nombre.errors.minlength" class="colorValidacionDanger">
+                  Minimo 4 Caracteres
+                </div>
+                <div class="col-sm-12" *ngIf="form.controls.nombre.errors.maxlength" class="colorValidacionDanger">
                   Maximo 25 Caracteres
                 </div>
-                <div class="col-sm-12 alert alert-danger" *ngIf="form.controls.nombre.errors.pattern">
-                   solamente numeros y 5
-                </div>
+
+              </div>
             </div>
-            {{form.controls.nombre.errors|json}} {{form.controls.nombre.dirty}}
+            <!--
+               Fin de  Validaciones
+            -->
+
+            <div class="form-group col">
+              <label for="apellidos" class="form-control-label ">Apellidos:</label>
+              <input type="text" class="form-control col-sm-12 " id="apellidos" formControlName="apellidos">
+              <!--
+                  Validaciones
+                -->
+              <div class="col-sm-12" *ngIf="(form.controls.apellidos.errors && form.controls.apellidos.touched) || (form.controls.apellidos.errors && form.controls.apellidos.dirty)">
+                <div *ngIf="form.controls.apellidos.errors.required" class="colorValidacionDanger">
+                  Campo Requerido
+                </div>
+                <div class="col-sm-12" *ngIf="form.controls.apellidos.errors.minlength" class="colorValidacionDanger">
+                  Minimo 4 Caracteres
+                </div>
+                <div class="col-sm-12" *ngIf="form.controls.apellidos.errors.maxlength" class="colorValidacionDanger">
+                  Maximo 25 Caracteres
+                </div>
+
+              </div>
+            </div>
           </div>
+
+
+
           <div class="form-row">
-            <label for="edad" class="form-control-label col-sm-12 col-md-2 col-lg-2">Edad:</label>
-            <input type="number" class="form-control col-sm-12 col-md-10 col-lg-10" id="edad" name="edad" formControlName="edad">
+            <div class="form-group col">
+              <label for="edad" class="form-control-label ">Edad:</label>
+              <input type="number" class="form-control " id="edad" name="edad" formControlName="edad">
+              <!--
+              Validaciones
+            -->
+
+              <div class="col-sm-12" *ngIf="(form.controls.edad.errors && form.controls.edad.touched) || (form.controls.edad.errors && form.controls.edad.dirty)">
+                <p *ngIf="form.controls.edad.errors.required" class="colorValidacionDanger">
+                  *Campo Requerido
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.edad.errors.min" class="colorValidacionDanger">
+                  *Minima Edad 10 Años
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.edad.errors.max" class="colorValidacionDanger">
+                  *Maxima Edad 99 Años
+                </p>
+                <p class="col-sm-12 " *ngIf="form.controls.edad.errors.pattern" class="colorValidacionDanger">
+                  *Solamente introducir Numeros
+                </p>
+              </div>
+            </div>
+            <!--
+              Validaciones
+            -->
+            <div class="form-group col">
+              <label for="domicilio" class="form-control-label ">Domicilio:</label>
+              <input type="text" class="form-control" id="domicilio" name="domicilio" formControlName="domicilio">
+
+              <!--
+                  Validaciones
+                -->
+
+              <div class="col-sm-12" *ngIf="(form.controls.domicilio.errors && form.controls.domicilio.touched) || (form.controls.domicilio.errors && form.controls.domicilio.dirty)">
+                <p *ngIf="form.controls.domicilio.errors.required" class="colorValidacionDanger">
+                  *Campo Requerido
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.domicilio.errors.minlength" class="alert alert-danger" class="colorValidacionDanger">
+                  *Minimo de caracteres 10
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.domicilio.errors.maxlength" class="alert alert-danger" class="colorValidacionDanger">
+                  *Maximo de caracteres 50
+                </p>
+
+              </div>
+
+              <!--
+                  Validaciones
+                -->
+            </div>
           </div>
+
+
           <div class="form-row">
-            <label for="domicilio" class="form-control-label col-sm-12 col-md-2 col-lg-2">Domicilio:</label>
-            <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="domicilio" name="domicilio" formControlName="domicilio">
+            <div class="form-group col">
+
+              <label for="correo" class="form-control-label ">Correo:</label>
+              <input type="email" class="form-control " id="correo" name="correo" formControlName="correo">
+            </div>
+            <div class="form-group col">
+              <label for="nacimiento" class="form-control-label ">Fecha Nacimiento:</label>
+              <input type="datetime" class="form-control " id="nacimiento" name="nacimiento" formControlName="nacimiento">
+            </div>
           </div>
-          <div class="form-row">
-            <label for="correo" class="form-control-label col-sm-12 col-md-2 col-lg-2">Correo:</label>
-            <input type="email" class="form-control col-sm-12 col-md-10 col-lg-10" id="correo" name="correo" formControlName="correo">
-          </div>
-          <div class="form-row">
-            <label for="nacimiento" class="form-control-label col-sm-12 col-md-2 col-lg-2">Fecha Nacimiento:</label>
-            <input type="datetime" class="form-control col-sm-12 col-md-10 col-lg-10" id="nacimiento" name="nacimiento" formControlName="nacimiento">
-          </div>
+
           <div class="form-row">
             <label for="puesto" class="form-control-label col-sm-12 col-md-2 col-lg-2">Puesto:</label>
             <select type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="puesto" name="puesto" formControlName="puesto">
@@ -64,36 +144,95 @@
 
 
             </select>
+
+            <!--
+              Validaciones
+            -->
+
+            <div class="col-sm-12" *ngIf="(form.controls.puesto.errors && form.controls.puesto.touched) || (form.controls.puesto.errors && form.controls.puesto.dirty)">
+              <p *ngIf="form.controls.puesto.errors.required" class="colorValidacionDanger">
+                *Campo Requerido
+              </p>
+
+
+            </div>
+
+            <!--
+            Validaciones
+          -->
+
           </div>
           <div class="form-row">
             <div class="form-group col">
               <label class="form-control-label" for="usuario">Usuario:</label>
               <input type="text" class="form-control" id="usuario" name="usuario" formControlName="usuario">
+
+              <!--
+              Validaciones
+            -->
+
+              <div class="col-sm-12" *ngIf="(form.controls.usuario.errors && form.controls.usuario.touched) || (form.controls.usuario.errors && form.controls.usuario.dirty)">
+                <p *ngIf="form.controls.usuario.errors.required" class="colorValidacionDanger">
+                  *Campo Requerido
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.usuario.errors.minlength" class="alert alert-danger" class="colorValidacionDanger">
+                  *Minimo de caracteres 5 para el usuario
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.usuario.errors.maxlength" class="alert alert-danger" class="colorValidacionDanger">
+                  *Maximo de caracteres 15
+                </p>
+
+              </div>
+
+              <!--
+              Validaciones
+            -->
+
             </div>
 
             <div class="form-group col">
               <label for="contraseña" class="form-control-label">Contraseña:</label>
-              <input type="text" class="form-control" id="contraseña" name=contraseña #contrasena formControlName="contrasena">
+              <input type="password" class="form-control" id="contraseña" name=contraseña #contrasena formControlName="contrasena">
+
+              <!--
+              Validaciones
+            -->
+
+              <div class="col-sm-12" *ngIf="(form.controls.contrasena.errors && form.controls.contrasena.touched) || (form.controls.contrasena.errors && form.controls.contrasena.dirty)">
+                <p *ngIf="form.controls.contrasena.errors.required" class="colorValidacionDanger">
+                  *Campo Requerido
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.contrasena.errors.minlength" class="alert alert-danger" class="colorValidacionDanger">
+                  *Minimo de caracteres 5 para el usuario
+                </p>
+                <p class="col-sm-12" *ngIf="form.controls.contrasena.errors.maxlength" class="alert alert-danger" class="colorValidacionDanger">
+                  *Maximo de caracteres 15
+                </p>
+
+              </div>
+
+              <!--
+              Validaciones
+            -->
+
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col">
+            <div class="form-group col" *ngIf="form.valid">
               <button class="btn btn-success" (click)="agregar(form.value)">Guardar</button>
             </div>
             <div class="form-group col">
               <button type="reset" class="btn btn-primary">Resetear</button>
             </div>
             <div class="form-group col"></div>
-            {{form.value|json}}
+            {{form.value|json}} {{form.valid|json}}
 
           </div>
 
 
         </form>
       </div>
-      <div class="col-sm-12 col-md-2 col-lg-2">
-        <!-- <button type="reset"  class="btn btn-primary">Resetear</button>   -->
-      </div>
+
     </div>
 
 

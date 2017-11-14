@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import {  ReactiveFormsModule, Form, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,11 @@ import { MenuNavComponent } from './Componentes/menu-nav/menu-nav.component';
 import { ProveedoresComponent } from './vistas/proveedores/proveedores.component';
 import { InventarioComponent } from './vistas/inventario/inventario.component';
 import { FacturasComponent } from './vistas/facturas/facturas.component';
+import { LoginService } from './vistas/login/service/login.service';
+import { MenuService } from './services/menu.service';
+import { PromocionesserviceService } from './services/promocionesservice.service';
+import { ModalComponent } from './Componentes/modal/modal.component';
+
 
 @NgModule({
   declarations: [
@@ -27,15 +32,18 @@ import { FacturasComponent } from './vistas/facturas/facturas.component';
     MenuNavComponent,
     ProveedoresComponent,
     InventarioComponent,
-    FacturasComponent
+    FacturasComponent,
+    ModalComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [LoginService,MenuService,PromocionesserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

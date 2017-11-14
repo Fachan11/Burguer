@@ -13,8 +13,33 @@
 @med-media: ~"only screen and (max-width: 991px)";
 @large-media: ~"only screen and (min-width: 992px)";
 @x-large-media: ~"only screen and (min-width: 1200px)";
+@x-large-media1: ~"only screen and (min-width: 1201px)";
 
+@media @small-media{
+    .container{
+        max-width: 800px !important;
+    }
+}
 
+@media @large-media{
+    
+        .container{
+            max-width: 1000px !important;
+        }
+    
+    }
+
+//: ~"only screen and (min-width: 1200px)";
+@media @x-large-media{
+    .container {
+        max-width: 1320px !important;
+    }
+}
+@media @x-large-media1{
+    .container {
+        max-width: 1320px !important;
+    }
+}
 // .body {
     
 //     background-color: #ededed;
@@ -38,4 +63,9 @@
 .card-sinborde
 {
     border: none;
+}
+
+.colorValidacionDanger{
+    color:red;
+    font-size: 15px;
 }

@@ -1,115 +1,186 @@
-    <app-menu-nav></app-menu-nav> 
-    <div class="container">
+<app-menu-nav></app-menu-nav>
+<div class="container">
 
-    <div class="card card-container">
-      <div class="row">
-        
-        
-  
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="row">
-           <div class="col-sm-12 col-md-3 col-lg-3 imagencentrada" >
-                <img src="assets/Images/Generales/LaBurguesia.jpg" alt="" class="img-fluid">
-              </div>
-            <h3>Cotizaciones</h3>
-            <hr> 
-          </div>  
-          
+  <div class="card card-container">
+    <div class="row">
 
-          <form>
-            <div >
-            <div class="form-row">
-              <label for="nombre" class="form-control-label col-sm-12 col-md-2 col-lg-2">Nombre de Empresa:</label>
-              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-4" id="nombre" name="nombre"  #nombre>
-            <!-- </div> -->
-            <!-- <div class="form-row"> -->
-              <label for="edad" class="form-control-label col-sm-12 col-md-2 col-lg-2">Dirección:</label>
-              <input type="number" class="form-control col-sm-12 col-md-10 col-lg-4" id="edad"  name="edad" >
+
+
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-12 imagencentrada">
+            <img src="assets/Images/Generales/LaBurguesia.jpg" alt="" class="img-fluid">
+            <h3>Paquetes Para Fiestas</h3>
+            <hr>
+            <h5>Atrevete en contratar algunos de los paquetes que tenemos para todo tipos de fiesta o reunion.</h5>
+          </div>
+
+        </div>
+
+        <div class="panel-group card">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title card-header">
+                <a data-toggle="collapse" href="#collapse1">Infantiles</a>
+              </h4>
             </div>
-            <div class="form-row">
-              <label for="domicilio" class="form-control-label col-sm-12 col-md-2 col-lg-2">Domicilio:</label>
-              <input type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="domicilio"  name="domicilio" >
-            </div>
-            <div class="form-row">
-              <label for="correo" class="form-control-label col-sm-12 col-md-2 col-lg-2">Correo:</label>
-              <input type="email" class="form-control col-sm-12 col-md-10 col-lg-10" id="correo"  name="correo" >
-            </div>
-            <div class="form-row">
-                <label for="nacimiento" class="form-control-label col-sm-12 col-md-2 col-lg-2">Fecha Nacimiento:</label>
-                <input type="datetime" class="form-control col-sm-12 col-md-10 col-lg-10" id="nacimiento"  name="nacimiento" >
-              </div>
-              <div class="form-row">
-                  <label for="puesto" class="form-control-label col-sm-12 col-md-2 col-lg-2">Puesto:</label>
-                  <select type="text" class="form-control col-sm-12 col-md-10 col-lg-10" id="puesto"  name="puesto" >
-                      <option value="1" disabled>Seleccione Puesto</option>
-                      <option value="Almacen">Almacen</option>
-                    <option value="Mesero">Mesero</option>
-                    <option value="Gerente">Gerente</option>
-                    <option value="Limpieza">Limpieza</option>
-                    
-                    
-                    
-                  </select>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="container">
+                <div class=row>
+                  <div class="col" *ngFor="let item of promociones.Infantiles">
+                    <div class="panel-body card-body">
+
+
+
+                      <div class="card">
+                        <div class=card-header>
+                          Numero de Paquete {{item.categoriaPromocion}}: {{item.idPromocion}}
+                        </div>
+
+                        <div class="card-body">
+                          <p class="card-text">{{item.descripcionPromocion}}</p>
+                          <h5>Costo: {{item.costoPromocion}}</h5>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
-            <div class="form-row">
-              <div class="form-group col">
-                <label class="form-control-label" for="usuario">Usuario:</label>
-                <input type="text" class="form-control" id="usuario"  name="usuario">
               </div>
-  
-              <div class="form-group col">
-                <label for="contraseña" class="form-control-label">Contraseña:</label>
-                <input type="text" class="form-control" id="contraseña" name=contraseña  #contrasena>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col"><button  class="btn btn-success" (click)="agregar(contacto.value)">Guardar</button></div>
-              <div class="form-group col"><button type="reset" class="btn btn-primary">Resetear</button></div>
-              <div class="form-group col"></div>
-              {{contacto.value | json}}
-              {{nombre}}
             </div>
           </div>
-            
-          </form>
         </div>
-        <!-- <div class="col-sm-12 col-md-2 col-lg-2">
-          <button type="reset"  class="btn btn-primary">Resetear</button>  
-        </div> -->
+
+        <div class="panel-group card">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title card-header">
+                  <a data-toggle="collapse" href="#collapse11">Reuniones</a>
+                </h4>
+              </div>
+              <div id="collapse11" class="panel-collapse collapse">
+                <div class="container">
+                  <div class=row>
+                    <div class="col" *ngFor="let item of promociones.Reuniones">
+                      <div class="panel-body card-body">
+  
+  
+  
+                        <div class="card">
+                          <div class=card-header>
+                            Numero de Paquete {{item.categoriaPromocion}}: {{item.idPromocion}}
+                          </div>
+  
+                          <div class="card-body">
+                            <p class="card-text">{{item.descripcionPromocion}}</p>
+                            <h5>Costo: {{item.costoPromocion}}</h5>
+                          </div>
+                        </div>
+  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       
       </div>
-  
-      <div class="row">
-        <div class="col-sm-12">
-            <table class="table table-hover table-responsive">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>Domicilio</th>
-                    <th>Correo</th>
-                    <th>Puesto</th>
-                    <th>Usuario</th>
-                  </tr>
-                </thead>
-                <tbody >
-                  <tr *ngFor="let item of usuarios1">
-                    <th scope="row">{{item.id}}</th>
-                    <td>{{item.nombre}}</td>
-                    <td>{{item.edad}}</td>
-                    <td>{{item.domicilio}}</td>
-                    <td>{{item.correo}}</td>
-                    <td>{{item.puesto}}</td>
-                    <td>{{item.usuario}}</td>
-                  </tr>
-                  
-                </tbody>
-              </table>
-        </div>
-      </div>
-  
-  
+      
     </div>
-    <!-- /card-container -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Domicilio</th>
+              <th>Correo</th>
+              <th>Puesto</th>
+              <th>Usuario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of usuarios1">
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.nombre}}</td>
+              <td>{{item.edad}}</td>
+              <td>{{item.domicilio}}</td>
+              <td>{{item.correo}}</td>
+              <td>{{item.puesto}}</td>
+              <td>{{item.usuario}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
   </div>
-  <!-- /container -->
+  <!-- /card-container -->
+</div>
+<!-- /container -->
+<button type="button" (click)="modal.show()">test</button>
+<app-modal #modal>
+  <div class="app-modal-header">
+    Ingrese Los Datos de la Contratación
+  </div>
+  <div class="app-modal-body">
+      <form novalidate [formGroup]=form>
+          <div>
+            <div class="form-row">
+                <div class="form-group col">
+                                <label for="nombre" class="form-control-label ">Nombres:</label>
+              <input type="text" class="form-control " id="nombreCliente" name="nombreCliente" formControlName=nombreCliente>
+              <!-- </div> --></div> 
+              <!-- <div class="form-row"> -->
+                  <div class="form-group col">
+              <label for="edad" class="form-control-label ">Apellidos:</label>
+              <input type="text" class="form-control " id="apellidoCliente" name="apellidoCliente" formControlName=apellidoCliente >
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+              <label for="domicilio" class="form-control-label ">Domicilio:</label>
+              <input type="text" class="form-control " id="direccionCliente" name="direccionCliente" formControlName=direccionCliente>
+            </div>
+            <!-- <div class="form-row"> --><div class="form-group col">
+              <label for="correo" class="form-control-label ">Telefono:</label>
+              <input type="email" class="form-control " id="telefonoCliente" name="telefonoCliente" formControlName=telefonoCliente>
+            <!-- </div> --></div></div>
+            <div class="form-row">
+              <select class="form-control " formControlName=idPromocion>
+                <option  value=0>Seleccione Un Paquete</option>
+                <option value={{item.idPromocion}} *ngFor="let item of promociones.Generales"  >
+                    Paquete {{item.categoriaPromocion}} {{item.idPromocion}}
+                </option> 
+              </select>
+            </div>
+           
+            <div class="form-row">
+              <div class="form-group col">
+                <label class="form-control-label" for="usuario">Dia pedido:</label>
+                <input type="text" class="form-control" id="fechaPedido" name="fechaPedido" formControlName=fechaPedido>
+              </div>
+
+              <div class="form-group col">
+                <label for="contraseña" class="form-control-label">Fecha entrega:</label>
+                <input type="text" class="form-control" id="fechaEntrega" name=fechaEntrega formControlName=fechaEntrega>
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+        {{form.value|json }}
+  </div>
+  <div class="app-modal-footer">
+    <button type="button" class="btn btn-default" (click)="modal.hide()">Close</button>
+    <button type="button" class="btn btn-primary" (click)=contratarPromocion();>Save changes</button>
+  </div>
+</app-modal>

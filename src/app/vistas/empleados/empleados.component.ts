@@ -16,18 +16,50 @@ export class EmpleadosComponent implements OnInit {
           Validators.required,
           Validators.minLength(4),
           Validators.maxLength(25),
-          Validators.pattern("[0-9]{5}")
+          
+        ])],
+        apellidos:['',Validators.compose([
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(25),
+          
         ])],
         edad:['',Validators.compose([
-          Validators.pattern("[0-9]{5}")
+          Validators.pattern("[0-9]{2}"),
+          Validators.required,
+          
+          Validators.min(9),
+          Validators.max(99),
         ])],
-        domicilio:'',
-        correo:'',
+        domicilio:['',Validators.compose([
+          Validators.required,
+          
+          Validators.minLength(10),
+          Validators.maxLength(50),
+        ])],
+        correo:['',Validators.compose([
+          Validators.required
+        ])],
 
-        nacimiento:'',
-        puesto:'',
-        usuario:'',
-        contrasena:''
+        nacimiento:['',Validators.compose([
+          Validators.required
+        ])],
+        puesto:['',Validators.compose([
+          Validators.required
+        ])],
+        usuario:['',Validators.compose([
+          Validators.required,
+          
+          Validators.minLength(6),
+          Validators.maxLength(15),
+        ])],
+        contrasena:['',Validators.compose([
+          Validators.required,
+          
+          Validators.minLength(6),
+          Validators.maxLength(15),
+        ])],
+        
       })
     }
 

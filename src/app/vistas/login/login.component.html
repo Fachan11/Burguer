@@ -1,27 +1,47 @@
 <div class="container">
-  
-<div class="col-lg-12 well">
 
-  <div class="row" >
-    <img src="assets/Images/Generales/LaBurguesia.jpg" alt="">
-  </div>
+  <div class="col-lg-12 well">
+    <div class="card">
+      <div class="card-block">
 
-    <div class="row">
-      <div class="col-sm-6 form-group">
-        <label>User Name</label>
-        <input type="text" placeholder="Enter Username" class="form-control">
-      </div>
-      <div class="col-sm-6 form-group">
-        <label>Password</label>
-        <input type="password" placeholder="Enter Password" class="form-control">
+        <div class="row">
+          <img src="assets/Images/Generales/LaBurguesia.jpg" alt="">
+        </div>
+        <form [formGroup]=form>
+          <div class="row">
+
+            <div class="col-sm-6 form-group">
+              <label>User Name</label>
+              <input type="text" placeholder="Enter Username" class="form-control" formControlName=nombreUsuario>
+              <div class="col-sm-12" *ngIf="(form.controls.nombreUsuario.errors && form.controls.nombreUsuario.touched) || (form.controls.nombreUsuario.errors && form.controls.nombreUsuario.dirty)">
+                <div *ngIf="form.controls.nombreUsuario.errors.required" class="colorValidacionDanger">
+                  Campo Requerido
+                </div>
+
+              </div>
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Password</label>
+              <input type="password" placeholder="Enter Password" class="form-control" formControlName=contrasenaUsuario>
+              <div class="col-sm-12" *ngIf="(form.controls.contrasenaUsuario.errors && form.controls.contrasenaUsuario.touched) || (form.controls.contrasenaUsuario.errors && form.controls.contrasenaUsuario.dirty)">
+                <div *ngIf="form.controls.contrasenaUsuario.errors.required" class="colorValidacionDanger">
+                  Campo Requerido
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <button class="btn btn-block btn-info" (click)="logIn()">Login</button>
+              <div class="alert alert-danger" *ngIf="resultado.message">
+                {{resultado.message}}
+              </div>
+            </div>
+          </div>
+        </form>
+
       </div>
     </div>
-    <div class="row">				
-      <div class="col-sm-12 text-center">
-      <button type="button" class="btn btn-block btn-info" routerLink="/home" routerLinkActive="active">Login</button> 
-      </div>
-    </div>				  
-    
-    
-</div>
+  </div>
 </div>

@@ -1,12 +1,5 @@
-export class usuario {
-    id: number;
-    nombre: string;
-    edad: number;
-    domicilio: string;
-    correo: string;
-    nacimiento: string;
-    puesto: string;
+export class Usuarios {
     usuario: string;
-    contraseña: string
+    contrasena: string;
 }
 
